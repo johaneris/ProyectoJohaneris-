@@ -123,7 +123,7 @@ void askData(){
     scanf(" %[^\n]", a.time.hour);
     cout << "\033[1;36mIngrese los minutos de la cita (mm): \033[0m";
     scanf(" %[^\n]", a.time.minute);
-    addAppointment(&a);
+    addAppointment(&a); /*Llama a una función addAppointment pasándole la dirección de la variable a.*/
 }
 
 void addAppointment(APPOINTMENT *a){
@@ -329,6 +329,7 @@ void ask_data(){
     scanf(" %[^\n]", r.medicalHistory);
     cout << "\033[1;36mIngrese los la razon del la cita:  \033[0m";
     scanf(" %[^\n]", r.consultationReason);
+    addRegister(&r);
 }
 
 
