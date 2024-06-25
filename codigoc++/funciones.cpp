@@ -12,7 +12,8 @@ APPOINTMENT appointments[MAX_APPOINTMENTS];
 REGISTER registers[MAX_REGISTERS];
 
 
-int pos = 0;
+int posAppointment = 0;
+int posRegister = 0;
 
 int getValid();
 APPOINTMENT identify_ID(int id);
@@ -78,7 +79,7 @@ int getValidID(){
 /*esta funcion busca la posición de una cita en una lista de citas según un identificador (id) específico.*/
 
 int obtPos(int id){
-    for (int i = 0; i < pos; i++){
+    for (int i = 0; i < posAppointment; i++){
         if (appointments[i].id == id){
             return i;
         }
@@ -86,8 +87,12 @@ int obtPos(int id){
     return -1;
 }
 
+
+/*La función busca una cita en el arreglo appointments con un id específico.
+Si encuentra una cita con el id especificado, la devuelve.
+Si no encuentra una cita con ese id, devuelve una cita con valores predeterminados.*/
 APPOINTMENT identify_ID(int id){
-    for(int i = 0; i < pos; i++){
+    for(int i = 0; i < posAppointment; i++){
         if(appointments[i].id == id){
             return appointments[i];
         }
@@ -122,9 +127,9 @@ void askData(){
 }
 
 void addAppointment(APPOINTMENT *a){
-    if(pos < MAX_APPOINTMENTS){
-        appointments[pos] = *a;
-        pos++;
+    if(posAppointment < MAX_APPOINTMENTS){
+        appointments[posAppointment] = *a;
+        posAppointment++;
     }else{
         cout << "\033[1;31mNo se pueden agregar más citas.\033[0m\n";
     }
@@ -143,6 +148,9 @@ void editAppointment(APPOINTMENT *a, int id){
         strcpy(appointments[posi].time.minute, a->time.minute);
     }
 }
+
+/*strcpy copia la cadena namePatient de a a
+ appointments[posi], sobrescribiendo cualquier valor anterior en appointments[posi].namePatient.*/
 
 void editAppointmentData(){
         int id = getValidID();
@@ -178,8 +186,7 @@ void editAppointmentData(){
     cin.get();
 }
 
-/*strcpy copia la cadena namePatient de a a
- appointments[posi], sobrescribiendo cualquier valor anterior en appointments[posi].namePatient.*/
+
 
 
 void showData(APPOINTMENT &a){
@@ -193,7 +200,7 @@ void showData(APPOINTMENT &a){
 }
 
 void show(){
-     for (int i = 0; i < pos; i++){
+     for (int i = 0; i < posAppointment; i++){
         showData(appointments[i]);
     }
     cout << "Presione Enter para continuar";
@@ -230,10 +237,10 @@ void showAppointmentByID(){
 void deleteAppointment(int id){
      int posi = obtPos(id);
     if (posi != -1) {
-        for (int i = posi; i < pos - 1; i++) {
+        for (int i = posi; i < posAppointment - 1; i++) {
             appointments[i] = appointments[i + 1];
         }
-        pos--;
+        posAppointment--;
     }
 }
 
@@ -325,8 +332,8 @@ void ask_data(){
 }
 
 
-REGISTER identify(int id){
-    for(int i = 0; i < pos; i++){
+REGISTER identifyRegisterByID(int id){
+    for(int i = 0; i < posRegister; i++){
         if(registers[i].id == id){
             return registers[i];
         }
@@ -338,9 +345,9 @@ REGISTER identify(int id){
 }
 
 void addRegister(REGISTER *r){
-    if(pos < MAX_REGISTERS){
-        registers[pos] = *r;
-        pos++;
+    if(posRegister < MAX_REGISTERS){
+        registers[posRegister] = *r;
+        posRegister++;
     }else{
         cout << "\033[1;31mNo se pueden agregar mas registros\033[0m\n";
     }
@@ -363,10 +370,10 @@ void editRegister(REGISTER *r, int id){
 void deleteRegister(int id){
     int posi = obtPos(id);
     if(posi != -1){
-        for(int i = posi; i < pos; i++){
+        for(int i = posi; i < posRegister; i++){
             registers[i] = registers[i+1];
         }
-        pos--;
+        posRegister--;
     }
 }
 
@@ -384,17 +391,15 @@ void showRegisterData(REGISTER &r){
 
 void showRegisters(){
     system("cls");
-    for(int i = 0; i < pos; i++){
+    for(int i = 0; i < posRegister; i++){
        showRegisterData(registers[i]);
     }
     cout << "presiones enter para continuar";
-    cin.ignore();
-    cin.get();
 }
 
 void editRegisterData(){
     int id = getValidID();
-    REGISTER r = identify(id);
+    REGISTER r = identifyRegisterByID(id);
     if(r.id != 0){
         cout << "ingrese el nuevo nombre del paciente: \n";
         cin.ignore();
@@ -429,7 +434,7 @@ void removeData(){
  //enfasis aqui
 void showRegisterByID(){
     int id = getValidID();
-    REGISTER r = identify(id);
+    REGISTER r = identifyRegisterByID(id);
     if(r.id != 0){
         showRegisterData(r);
     }else{
@@ -547,7 +552,7 @@ void menuAdmin(){
             cin.ignore();
             cin.get();
         }
-    } while (option != 6);
+    } while(option != 6);
 }
 
 void mainMenu(){
