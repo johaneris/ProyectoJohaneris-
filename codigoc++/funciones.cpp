@@ -2,10 +2,16 @@
 #include <string.h>
 #include "variables.h"
 
-/*entonces, esta es para las funciones de agendar cita, esta casi complet
-falta validar con otra librera, ajustar el locale.h y ajustar ciertos errores
-de usuario que puedo tener*/
+/*entonces, esta es para las funciones de agendar cita, esta casi completa, ajustar el locale.h y ajustar ciertos errores
+de usuario que puedo tener, necesito mejorar lo de las fechas y ciertas cosas como el presionar enter*/
 
+//nota: Un búfer es un área de memoria temporal que se utiliza para almacenar datos mientras se mueven de un lugar a otro
+
+/*entonces, el cin ignore sirve para ignorar, como dice el nombre, 
+el siguiente carácter en el búfer de entrada para manejar correctamente la entrada del usuario*/ 
+
+/*el cin get es una función que se utiliza para leer un solo carácter del búfer de entrada. 
+Esto puede ser útil cuando quieres pausar la ejecución del programa hasta que el usuario presione una tecla.*/
 using namespace std;
 
 APPOINTMENT appointments[MAX_APPOINTMENTS];
@@ -14,6 +20,7 @@ REGISTER registers[MAX_REGISTERS];
 
 int posAppointment = 0;
 int posRegister = 0;
+
 
 int getValid();
 APPOINTMENT identify_ID(int id);
@@ -77,6 +84,7 @@ int getValidID(){
 }
 
 /*esta funcion busca la posición de una cita en una lista de citas según un identificador (id) específico.*/
+// Busca la posición de una cita en el array de citas según el ID proporcionado.
 
 int obtPos(int id){
     for (int i = 0; i < posAppointment; i++){
