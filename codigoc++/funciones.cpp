@@ -111,7 +111,7 @@ void askData(){
     scanf(" %[^\n]", a.namePatient); /*El formato %[^\n] indica que debe leer 
     hasta encontrar un salto de línea, permitiendo 
     así capturar nombres con espacios.*/
-    cout << "\033[1;36mIngrese el tratamiento: \033[0m";
+    cout << "\033[1;36mIngrese el tratamiento: \033[0m"; //En el código, se utilizan secuencias de escape ANSI para cambiar el color del texto en la consola. 
     scanf(" %[^\n]", a.treatment);
     cout << "\033[1;36mIngrese el día de la cita (dd): \033[0m";
     scanf(" %[^\n]", a.dates.day);
