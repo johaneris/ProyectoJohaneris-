@@ -195,7 +195,7 @@ void askData(){
     appointment << "ID: " << a.id << "\n";
     appointment << "Nombre del paciente: "  << a.namePatient << "\n";
     appointment << "Tratamiento: " << a.treatment << "\n";
-    appointment << "fecha de la cita: " << "/" << a.dates.month << "/" << a.dates.year << "\n";
+    appointment << "fecha de la cita: " << a.dates.day << "/" << a.dates.month << "/" << a.dates.year << "\n";
     appointment << "hora de la cita: " << a.time.hour <<  ":" << a.time.minute << "\n";
 }
 

@@ -1,5 +1,5 @@
-ID: 1
-Nombre del paciente: joha
-Tratamiento: dfdfdf
-fecha de la cita:/df/dfdf
-hora de la cita: df:df
+ID: 9
+Nombre del paciente: joh
+Tratamiento: jjj
+fecha de la cita: 90/90/9
+hora de la cita: 9:9
