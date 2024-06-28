@@ -1,1 +1,81 @@
 
+ID: 2
+nombre del paciente: johanerisAvalos
+direccion: costado norte de la quinta 2 c84342603
+numero de telefono: 84342603
+edad del paciente12
+genero del pacientefemenino
+historial medico:presenta asma cronica, es alergico a cuiertos alimentos
+razon de la consulta: extraccion
+ID: 1
+nombre del paciente: johaavalos
+direccion: costado orte de la quinta 2 cu84342603
+numero de telefono: 84342603
+edad del paciente12
+genero del pacientemasculino
+historial medico:asma
+razon de la consulta: se esta palmando
+ID: 1
+nombre del paciente: johaneris avalos
+direccion: costado norte del restaurante 84342603
+numero de telefono: 84342603
+edad del paciente12
+genero del pacientefemenino
+historial medico:cancer
+razon de la consulta: cancer x2
+ID: 1
+nombre del paciente: johaneris Avalos 
+direccion: costado norte del restaurante 84342603
+numero de telefono: 84342603
+edad del paciente12
+genero del pacientefemenino
+historial medico:cancer 
+razon de la consulta: cancer terminal
+ID: 1
+nombre del paciente: johaneris avalos
+direccion: costado norte de la quinta 2 uadras y media al oeste
+numero de telefono: 84342603
+edad del paciente12
+genero del pacientefemenino
+historial medico:tuberculosis
+razon de la consulta: osteoporosis
+ID: 1
+nombre del paciente: Juana Fernandez 
+direccion: costado norte de la 	uita 2 cuadras y media al oeste 
+numero de telefono: 84342603
+edad del paciente12
+genero del pacientefemenino
+historial medico:andsiedad
+razon de la consulta: ansiedad x5
+ID: 1
+nombre del paciente: ee
+direccion: e
+numero de telefono: e
+edad del pacientee
+genero del pacientee
+historial medico:e
+razon de la consulta: e
+ID: 1
+nombre del paciente: johaava
+direccion: costado norte de la quinta 2 cuadras y media al oeste
+numero de telefono: 84332603
+edad del paciente12
+genero del pacientefemenino
+historial medico:cancer uwu
+razon de la consulta: uwu
+ID: 1
+nombre del paciente: gabrielito brown
+direccion: carretera nueva leon kilometro 17.5 ciudad el doral
+numero de telefono: 78579233
+edad del paciente99
+genero del pacientemasculino
+historial medico:exceso de belleza
+razon de la consulta: tu numero beibi
+ID: 1
+nombre del paciente: johaneris  Avalos 
+direccion: costado norte de la quinta 2 cuadras y media al oeste 
+numero de telefono: 84342603
+edad del paciente: 23
+genero del paciente: femenino
+historial medico: tiene cancer, se esta palmando, ayuda
+razon de la consulta: se esta palmando ayuda 

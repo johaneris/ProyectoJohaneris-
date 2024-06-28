@@ -432,12 +432,12 @@ void ask_data()
     scanf(" %[^\n]", r.consultationReason);
     addRegister(&r);
     Saveregister << "ID: " << r.id << "\n";
-    Saveregister << "nombre del paciente: " << r.name << "" << r. lastName << "\n";
-    Saveregister << "direccion: " << r.address << "\n";
+    Saveregister << "nombre del paciente: " << r.name << "" << r.lastName << "\n";
+    Saveregister << "direccion: "<< r.address << "\n";
     Saveregister << "numero de telefono: " << r.number << "\n";
-    Saveregister << "edad del paciente" << r.age << "\n";
-    Saveregister << "genero del paciente" << r.gender << "\n";
-    Saveregister << "historial medico:" << r.medicalHistory << "\n";
+    Saveregister << "edad del paciente: " << r.age << "\n";
+    Saveregister << "genero del paciente: " << r.gender << "\n";
+    Saveregister << "historial medico: " << r.medicalHistory << "\n";
     Saveregister << "razon de la consulta: " << r.consultationReason << "\n";
     cout << "Paciente agregado con exito\n";
 }
@@ -505,10 +505,11 @@ void showRegisterData(REGISTER &r)
 {
     cout << "------------------------------------------------------" << endl;
     cout << "|" << "Numero del registro: " << r.id << endl;
-    cout << "|" << "Nombre y apellido: " << r.name << endl;
-    cout << "|" << "Direccion:         " << r.address << endl;
+    cout << "|" << "Nombre y apellido: " << r.name << " " << r.lastName << endl;
+    cout << "|" << "Direccion: " << r.address << endl;
     cout << "|" << "su numero de telefono: " << r.number << endl;
-    cout << "|" << "Edad:              " << r.age << endl;
+    cout << "|" << "Edad: " << r.age << endl;
+    cout << "|" << "genero: " << r.gender << endl;
     cout << "|" << "Historial medico:  " << r.medicalHistory << endl;
     cout << "|" << "Razon de la cita:  " << r.consultationReason << endl;
     cout << "-----------------------------------------------------" << endl;
@@ -576,7 +577,6 @@ void showRegisterByID()
     {
         cout << "no se encuentra el registro\n";
     }
-    cout << "presione enter";
     cin.ignore();
     cin.get();
 }

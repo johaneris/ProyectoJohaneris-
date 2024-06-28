@@ -33,7 +33,7 @@ struct REGISTER{
     int id;
     char name[20];
     char lastName[20];
-    char address[30];
+    char address[100];
     char number[10];
     char gender[10];
     char age[3];
