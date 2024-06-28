@@ -1,0 +1,5 @@
+ID: 1
+Nombre del paciente: joha
+Tratamiento: dfdfdf
+fecha de la cita:/df/dfdf
+hora de la cita: df:df
