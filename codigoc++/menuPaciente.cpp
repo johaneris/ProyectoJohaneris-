@@ -45,11 +45,11 @@ void menuPaciente()
         system("cls"); 
         cout << "\033[1;34m-------------Menu de Paciente-------------------\033[0m\n";
         cout << "1. Ver tratamientos dentales\n";
-        cout << "2. Ver precios en c�rdobas\n";
-        cout << "3. Ver horarios de atenci�n\n";
+        cout << "2. Ver precios en cordobas\n";
+        cout << "3. Ver horarios de atencion\n";
         cout << "4. Programar una cita\n";
         cout << "5. Salir\n";
-        cout << "Ingrese una opci�n: ";
+        cout << "Ingrese una opcion: ";
         cin >> option;
         cin.ignore();
 
@@ -110,7 +110,7 @@ void showClinicHours()
 {
     cout << "------------Horarios de atenci�n disponibles------------\n";
     cout << "Lunes a Viernes: 8:00 AM - 12 PM / 1 PM - 5:00 PM\n";
-    cout << "S�bados: 9:00 AM - 1:00 PM\n";
+    cout << "Sabados: 9:00 AM - 1:00 PM\n";
     cout << "Domingos: Cerrado\n";
 }
 
