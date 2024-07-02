@@ -33,7 +33,7 @@ void deleteAppointment(int id);
 // ==================================================================================
 
 // =========================================
-/*La funci�n busca una cita en el arreglo appointments con un id espec�fico.
+/*La funcion busca una cita en el arreglo appointments con un id especifico.
 basicamente si no se encuentra una cita con el id especificado, la devuelve.
 Si no encuentra una cita con ese id, devuelve una cita con valores predeterminados.*/
 APPOINTMENT identify_ID(int id)
@@ -52,8 +52,8 @@ APPOINTMENT identify_ID(int id)
 }
 
 // =========================================
-/*esta funcion busca la posici�n de una cita en una lista de citas seg�n un identificador (id) espec�fico.*/
-// Busca la posici�n de una cita en el array de citas seg�n el ID proporcionado.
+/*esta funcion busca la posicion de una cita en una lista de citas segun un identificador (id) especifico.*/
+// Busca la posicion de una cita en el array de citas segun el ID proporcionado.
 int findAppointmentPos(int id)
 {
     for (int i = 0; i < posAppointment; i++)
@@ -70,9 +70,9 @@ int findAppointmentPos(int id)
 int getValidID()
 {
     int id;
-    while (true) /*Este es un bucle infinito que se ejecutar� hasta que
-     encontremos una raz�n para salir de �l. En este caso, queremos que el usuario
-     siga intentando ingresar un ID v�lido hasta que lo consiga.*/
+    while (true) /*Este es un bucle infinito que se ejecutara hasta que
+     encontremos una razon para salir de el. En este caso, queremos que el usuario
+     siga intentando ingresar un ID valido hasta que lo consiga.*/
     {
         cout << "Ingrese el numero de su cita (solo numeros): ";
         cin >> id;

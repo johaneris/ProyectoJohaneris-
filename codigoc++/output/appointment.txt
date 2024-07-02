@@ -30,3 +30,27 @@ blanqueamiento; TRATAMIENTO
 1222; AÑO
 22; HORA
 22; MINUTO
+1; ID
+johaneris; NOMBRE DEL PACIENTE
+blanqueamiento; TRATAMIENTO
+23; DIA
+12; MES
+2024; AÑO
+12; HORA
+30; MINUTO
+2; ID
+johaneris; NOMBRE DEL PACIENTE
+blanqueamiento; TRATAMIENTO
+23; DIA
+05; MES
+2024; AÑO
+23; HORA
+12; MINUTO
+1; ID
+johaneris; NOMBRE DEL PACIENTE
+tratamiento; TRATAMIENTO
+23; DIA
+12; MES
+2024; AÑO
+12; HORA
+30; MINUTO
