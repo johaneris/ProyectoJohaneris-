@@ -17,9 +17,8 @@ void mainMenu() {
     {
         system("cls");
         cout << "\033[1;34mBienvenido al sistema de clinica dental los olivos\033[0m\n";
-        cout << "Elija su usuario: \n";
-        cout << "1. Paciente\n";
-        cout << "2. Administrador\n";
+        cout << "1. menu para paciente\n";
+        cout << "2. menu para doctor\n";
         cout << "3. Salir\n";
         cout << "Ingrese una opcion: ";
 

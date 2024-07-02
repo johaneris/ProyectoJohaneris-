@@ -54,6 +54,8 @@ void saveAppointment(APPOINTMENT arg){
         appointment << arg.time.hour << "; HORA" << endl;
         appointment << arg.time.minute << "; MINUTO" << endl;
     }
+    //arg es un parámetro de la función que representa un objeto de tipo APPOINTMENT. 
+    //Este parámetro arg se utiliza para pasar información específica de una cita (appointment) que se desea guardar en el archivo.
 
 }
 
