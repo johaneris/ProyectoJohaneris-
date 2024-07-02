@@ -1,12 +1,7 @@
-#include <iostream>
-#include <string.h>
-#include "funciones.cpp" 
-#include <locale.h>
-using namespace std;
+#include "menuPrincipal.cpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
-    setlocale(LC_ALL, "spanish");
     mainMenu();
     return 0;
 }

@@ -1,5 +1,32 @@
-ID: 9
-Nombre del paciente: joh
-Tratamiento: jjj
-fecha de la cita: 90/90/9
-hora de la cita: 9:9
+25; ID
+ohnathan; NOMBRE DEL PACIENTE
+impieza Dental; TRATAMIENTO
+25; DIA
+5; MES
+2024; AÑO
+15; HORA
+00; MINUTO
+78; ID
+Marco; NOMBRE DEL PACIENTE
+Limpieza Dental; TRATAMIENTO
+27; DIA
+08; MES
+1998; AÑO
+15; HORA
+45; MINUTO
+1; ID
+; NOMBRE DEL PACIENTE
+blanqueamiento; TRATAMIENTO
+12; DIA
+12; MES
+1212; AÑO
+12; HORA
+12; MINUTO
+2; ID
+joha; NOMBRE DEL PACIENTE
+blanqueamiento; TRATAMIENTO
+12; DIA
+12; MES
+1222; AÑO
+22; HORA
+22; MINUTO

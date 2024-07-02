@@ -6,37 +6,48 @@ using namespace std;
 #define MAX_REGISTERS 50
 #define MAX_APPOINTMENTS 50
 
+#define APPOINTMENTS_FILE "appointment.txt"
+#define REGISTERS_FILE "register.txt"
+
 //para convertir precios 
 #define EXCHANGE_RATE 36.5 // Tasa de cambio ejemplo de dólar a córdobas
 
 
 struct SCHEDULE{
-    char hour[3];
-    char minute[3]; 
+    string hour;
+    string minute; 
 };
 
 struct DATE{
-    char day[3];
-    char year[5];
-    char month[3];
+    string day;
+    string year;
+    string month;
 };
 
 struct APPOINTMENT{
     int id;
-    char namePatient[20];
-    char treatment[50];
+    string namePatient;
+    string treatment;
     SCHEDULE time;
     DATE dates;
 };
 
 struct REGISTER{
     int id;
-    char name[20];
-    char lastName[20];
-    char address[100];
-    char number[10];
-    char gender[10];
-    char age[3];
-    char consultationReason[30];
-    char medicalHistory[50];
+    string name;
+    string lastName;
+    string address;
+    string number;
+    string gender;
+    string age;
+    string consultationReason;
+    string medicalHistory;
 };
+
+// =========================================
+// Declaracion de Arreglos Globales
+APPOINTMENT appointments[MAX_APPOINTMENTS];
+int posAppointment = 0;
+
+REGISTER registers[MAX_REGISTERS];
+int posRegister = 0;
