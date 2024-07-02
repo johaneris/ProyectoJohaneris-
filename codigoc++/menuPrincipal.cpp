@@ -4,6 +4,8 @@
 
 #include "menuAdministrador.cpp"
 
+
+
 void mainMenu() {
     setlocale(LC_ALL, "spanish");
 

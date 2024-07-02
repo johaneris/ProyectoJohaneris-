@@ -7,7 +7,10 @@
 // =========================================
 // Funcion de Apoyo
 
-
+bool validarOpcion(int variable, int primera_opcion, int ultima_opcion) {
+    bool resultado = !(variable < primera_opcion || variable > ultima_opcion);
+    return resultado; // Va a retornar falso si la opcion no es valida
+}
 // =========================================
 // Men� Paciente
 
