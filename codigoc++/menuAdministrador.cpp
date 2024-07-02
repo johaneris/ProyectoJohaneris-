@@ -71,7 +71,7 @@ void menuAdministrador()
 }
 
 // ==================================================================================
-// Opciones de Men� de Administrador
+// Opciones de Menu de Administrador
 // ==================================================================================
 
 // =========================================
@@ -141,8 +141,8 @@ void showRegisterData(REGISTER &r)
     cout << "|" << "su numero de telefono: " << r.number << endl;
     cout << "|" << "Edad: " << r.age << endl;
     cout << "|" << "genero: " << r.gender << endl;
-    cout << "|" << "Historial medico:  " << r.medicalHistory << endl;
-    cout << "|" << "Razon de la cita:  " << r.consultationReason << endl;
+    cout << "|" << "Historial medico: " << r.medicalHistory << endl;
+    cout << "|" << "Razon de la cita: " << r.consultationReason << endl;
     cout << "-----------------------------------------------------" << endl;
 }
 

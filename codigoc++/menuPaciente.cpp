@@ -180,7 +180,7 @@ void askDataAppointments(){
     cout << "\033[1;36mIngrese su nombre: \033[0m";      /*secuencias de
          escape ANSI para cambiar el color del texto en la consola*/
     getline(cin, a.namePatient);
-    cout << "\033[1;36mIngrese el tratamiento: \033[0m"; // En el c�digo, se utilizan secuencias de escape ANSI para cambiar el color del texto en la consola.
+    cout << "\033[1;36mIngrese el tratamiento: \033[0m"; // En el codigo, se utilizan secuencias de escape ANSI para cambiar el color del texto en la consola.
     getline(cin, a.treatment);
     cout << "\033[1;36mIngrese el dia de la cita (dd): \033[0m";
     cin >> a.dates.day;
@@ -193,7 +193,7 @@ void askDataAppointments(){
     cout << "\033[1;36mIngrese los minutos de la cita (mm): \033[0m";
     cin >> a.time.minute;
 
-    addAppointment(&a); /*Llama a una funci�n addAppointment pas�ndole la direcci�n de la variable a.*/
+    addAppointment(&a); /*Llama a una funcion addAppointment pasandole la direccion de la variable a.*/
     saveAppointment(a);
 
 }
@@ -250,7 +250,7 @@ void editAppointmentData()
         cin >> a.dates.day;
         cout << "Ingrese el nuevo mes de la cita (mm): ";
         cin >> a.dates.month;
-        cout << "Ingrese el nuevo a�o de la cita (yyyy): ";
+        cout << "Ingrese el nuevo año de la cita (yyyy): ";
         cin >> a.dates.year;
 
         // Editar hora

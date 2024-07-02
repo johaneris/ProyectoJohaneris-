@@ -43,7 +43,7 @@ void mainMenu() {
                 exit(0); // Salir del programa por algo la funcion se llama exit
                 break;
             default:
-                cout << "Opci�n inv�lida. Por favor intente de nuevo.\n";
+                cout << "Opcion invalida. Por favor intente de nuevo.\n";
                 break;
         }
 
