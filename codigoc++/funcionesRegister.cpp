@@ -84,7 +84,7 @@ REGISTER identifyRegisterByID(int id)
         }
     }
     REGISTER r = {0, "", "", "", "", "", "", "", "", }; /*Esto es como decir "Si no encontramos la cita, devolvamos una
-cita vac�a para indicar que no se encontro", entones se inicializa
+cita vacia para indicar que no se encontro", entones se inicializa
 con valores por defecto.*/
     return r;
 }
