@@ -10,8 +10,6 @@ void mainMenu() {
     setlocale(LC_ALL, "spanish");
 
     int user;
-    loadAppointments();
-    loadRegisters();
 
     while(true)
     {

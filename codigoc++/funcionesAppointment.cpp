@@ -46,7 +46,7 @@ APPOINTMENT identify_ID(int id)
         }
     }
     APPOINTMENT a = {0, "", "", {"", ""}, {"", "", ""}}; /*Esto es como decir "Si no encontramos la cita, devolvamos una
-    cita vac�a para indicar que no se encontr�", entones se inicializa
+    cita vacia para indicar que no se encontr�", entones se inicializa
     con valores por defecto.*/
     return a;
 }
@@ -77,13 +77,14 @@ int getValidID()
         cout << "Ingrese el numero de su cita (solo numeros): ";
         cin >> id;
         if (cin.fail()) /* cin.fail() devuelve true si la entrada no es
-         un n�mero entero. Si esto ocurre, se ejecutan los siguientes paso*/
+         un numero entero. Si esto ocurre, se ejecutan los siguientes paso*/
         {
-            cin.clear() /*Esta funci�n limpia el estado de error de cin.
+            cin.clear() /*Esta funcion limpia el estado de error de cin.
               Es como reiniciar el estado de entrada para que pueda aceptar nuevas entradas.*/
                 ;
-            cin.ignore(10000, '\n') /* Esta funci�n ignora los caracteres en el b�fer de entrada
-              hasta encontrar un salto de l�nea (\n) o hasta haber ignorado 10,000 caracteres, lo que ocurra primero. Esto limpia cualquier entrada residual que el usuario haya dejado.*/
+            cin.ignore(10000, '\n') /* Esta funcion ignora los caracteres en el bufer de entrada
+              hasta encontrar un salto de linea (\n) o hasta haber ignorado 10,000 caracteres, lo que
+               ocurra primero. Esto limpia cualquier entrada residual que el usuario haya dejado.*/
                 ;
             cout << "Entrada invalida. Por favor ingrese un numero valido.\n";
         }
@@ -98,6 +99,7 @@ int getValidID()
 // =========================================
 void showData(APPOINTMENT &a)
 {
+    cout << "---------------------------------------------------" << endl;
     cout << "Numero de cita: " << a.id << endl;
     cout << "Nombre: " << a.namePatient << endl;
     cout << "Tratamiento: " << a.treatment << endl;
@@ -116,7 +118,7 @@ void addAppointment(APPOINTMENT *a)
     }
     else
     {
-        cout << "\033[1;31mNo se pueden agregar m�s citas.\033[0m\n";
+        cout << "\033[1;31mNo se pueden agregar mas citas.\033[0m\n";
     }
 }
 
@@ -128,13 +130,13 @@ void rewriteAppointment(APPOINTMENT *a, int id)
     int posi = findAppointmentPos(id);
     if (posi != -1)
     {
-        appointments[posi].namePatient = a->namePatient;
-        appointments[posi].treatment = a->treatment;
-        appointments[posi].dates.day = a->dates.day;
-        appointments[posi].dates.month = a->dates.month;
-        appointments[posi].dates.year = a->dates.year;
-        appointments[posi].time.hour = a->time.hour;
-        appointments[posi].time.minute = a->time.minute;
+        strcpy(appointments[posi].namePatient, a->namePatient);
+        strcpy(appointments[posi].treatment, a->treatment);
+        strcpy(appointments[posi].dates.day, a->dates.day);
+        strcpy(appointments[posi].dates.month, a->dates.month);
+        strcpy(appointments[posi].dates.year, a->dates.year);
+        strcpy(appointments[posi].time.hour, a->time.hour);
+        strcpy(appointments[posi].time.minute, a->time.minute);
 
     }
 }

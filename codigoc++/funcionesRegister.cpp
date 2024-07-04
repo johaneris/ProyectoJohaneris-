@@ -46,14 +46,14 @@ void editRegister(REGISTER *r, int id)
     int posi = findAppointmentPos(id);
     if (posi != -1)
     {
-        registers[posi].name = r->name;
-        registers[posi].lastName = r->lastName;
-        registers[posi].address = r->address;
-        registers[posi].number = r->number;
-        registers[posi].age = r->age;
-        registers[posi].gender = r->gender;
-        registers[posi].medicalHistory = r->medicalHistory;
-        registers[posi].consultationReason = r->consultationReason;
+        strcpy(registers[posi].name, r->name);
+        strcpy(registers[posi].lastName, r->lastName);
+        strcpy(registers[posi].address, r->address);
+        strcpy(registers[posi].number, r->number);
+        strcpy(registers[posi].age, r->age);
+        strcpy(registers[posi].gender, r->gender);
+        strcpy(registers[posi].medicalHistory, r->medicalHistory);
+        strcpy(registers[posi].consultationReason, r->consultationReason);
     }
 }
 

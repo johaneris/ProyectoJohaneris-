@@ -13,36 +13,43 @@ using namespace std;
 #define EXCHANGE_RATE 36.5 // Tasa de cambio ejemplo de dólar a córdobas
 
 
+#include <iostream>
+using namespace std;
+
+
+#define MAX_APPOINTMENT 50
+
 struct SCHEDULE{
-    string hour;
-    string minute; 
+    char hour[3];
+    char minute[3]; 
 };
 
 struct DATE{
-    string day;
-    string year;
-    string month;
+    char day[3];
+    char year[5];
+    char month[3];
 };
 
 struct APPOINTMENT{
     int id;
-    string namePatient;
-    string treatment;
+    char namePatient[21];
+    char treatment[51];
     SCHEDULE time;
     DATE dates;
 };
 
 struct REGISTER{
     int id;
-    string name;
-    string lastName;
-    string address;
-    string number;
-    string gender;
-    string age;
-    string consultationReason;
-    string medicalHistory;
-};
+    char name[21];
+    char lastName[21];
+    char address[31];
+    char number[10];
+    char gender[10];
+    char age[3];
+    char consultationReason[30];
+    char medicalHistory[50];
+}; 
+
 
 // =========================================
 // Declaracion de Arreglos Globales

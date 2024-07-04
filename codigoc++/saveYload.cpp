@@ -41,12 +41,12 @@ void saveAppointment(APPOINTMENT arg){
     fstream appointment;
     appointment.open(APPOINTMENTS_FILE, ios::app);
 
-    if(!appointment.is_open()){
+    if (!appointment.is_open()) {
         cout << "No se puede abrir el archivo para lectura" << endl;
         return;
     } else {
-        appointment << arg.id <<"; ID" << endl;
-        appointment << arg.namePatient <<"; NOMBRE DEL PACIENTE" << endl;
+        appointment << arg.id << "; ID" << endl;
+        appointment << arg.namePatient << "; NOMBRE DEL PACIENTE" << endl;
         appointment << arg.treatment << "; TRATAMIENTO" << endl;
         appointment << arg.dates.day << "; DIA" << endl;
         appointment << arg.dates.month << "; MES" << endl;
@@ -54,10 +54,13 @@ void saveAppointment(APPOINTMENT arg){
         appointment << arg.time.hour << "; HORA" << endl;
         appointment << arg.time.minute << "; MINUTO" << endl;
     }
+    appointment.close(); 
+}
+
     //arg es un parámetro de la función que representa un objeto de tipo APPOINTMENT. 
     //Este parámetro arg se utiliza para pasar información específica de una cita (appointment) que se desea guardar en el archivo.
 
-}
+
 
 // =========================================
 void saveEntireAppoint() {
@@ -88,6 +91,7 @@ void saveRegister(REGISTER r){
         cout << "No se puede abrir el archivo para lectura" << endl;
         return;
     }
+    Saveregister.close();
 
 }
 
@@ -103,7 +107,7 @@ void saveEntireRegister() {
 }
 
 // =========================================
-void loadAppointments() {
+/*void loadAppointments() {
     fstream appointmentf;
     appointmentf.open(APPOINTMENTS_FILE, ios::in);
 
@@ -182,4 +186,4 @@ void loadRegisters() {
             posRegister++;
         }
     }
-}
+}*/

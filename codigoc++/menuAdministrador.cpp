@@ -79,23 +79,22 @@ void askRegisterData()
 {
     REGISTER r;
     r.id = getValidID();
-    cout << "\033[1;36mIngrese el nombre del paciente: \033[0m";
-    getline(cin,r.name);
+     cout << "\033[1;36mIngrese el nombre del paciente: \033[0m";
+    scanf(" %[^\n]", r.name);
     cout << "\033[1;36mIngrese el apellido del paciente: \033[0m";
-    getline(cin, r.lastName);
+    scanf(" %[^\n]", r.lastName);
     cout << "\033[1;36mIngrese la direccion de domicilio del paciente: \033[0m";
-    getline(cin, r.address);
+    scanf(" %[^\n]", r.address);
     cout << "\033[1;36mIngrese el telefono del paciente (+505): \033[0m";
-    getline(cin, r.number);
+    scanf(" %[^\n]", r.number);
     cout << "\033[1;36mIngrese la edad del paciente: \033[0m";
-    getline(cin, r.age);
+    scanf(" %[^\n]", r.age);
     cout << "\033[1;36mIngrese el genero del paciente (masculino o femenino): \033[0m"; // mejorar esto para que solo se puedan elegir dos opciones
-    getline(cin, r.gender);
+    scanf(" %[^\n]", r.gender);
     cout << "\033[1;36mIngrese el historial medico del paciente: \033[0m";
-    getline(cin, r.medicalHistory);
+    scanf(" %[^\n]", r.medicalHistory);
     cout << "\033[1;36mIngrese los la razon del la cita:  \033[0m";
-    getline(cin, r.consultationReason);
-
+    scanf(" %[^\n]", r.consultationReason);
     addRegister(&r);
     saveRegister(r);
     cout << "Paciente agregado con exito\n";
@@ -154,16 +153,16 @@ void editRegisterData()
     if (r.id != 0)
     {
         cout << "ingrese el nuevo nombre del paciente: \n";
-        getline(cin, r.name);
+        cin.ignore();
+        scanf(" %[\n]", r.name);
         cout << "ingrese el nuevo apellido del paciente: \n ";
-        getline(cin, r.lastName);
+        scanf(" %[\n]", r.lastName);
         cout << "ingrese la nueva direccion del paciente: \n";
-        getline(cin, r.address);
+        scanf(" %[\n]", r.address);
         cout << "ingrese el nuevo numero de telefono del paciente: \n";
-        getline(cin, r.number);
+        scanf(" %[\n]", r.number);
         cout << "ingrese la nueva edad del paciente: \n";
-        getline(cin, r.age);
-
+        scanf(" %[\n]", r.age);
         editRegister(&r, id);
         cout << "registro editado\n";
     }

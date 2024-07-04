@@ -177,22 +177,23 @@ void askDataAppointments(){
 
     APPOINTMENT a;
     a.id = getValidID();
-    cout << "\033[1;36mIngrese su nombre: \033[0m";      /*secuencias de
-         escape ANSI para cambiar el color del texto en la consola*/
-    getline(cin, a.namePatient);
-    cout << "\033[1;36mIngrese el tratamiento: \033[0m"; // En el codigo, se utilizan secuencias de escape ANSI para cambiar el color del texto en la consola.
-    getline(cin, a.treatment);
+    cout << "\033[1;36mIngrese su nombre: \033[0m"; /*secuencias de
+    escape ANSI para cambiar el color del texto en la consola*/
+    scanf(" %[^\n]", a.namePatient); /*El formato %[^\n] indica que debe leer 
+    hasta encontrar un salto de línea, permitiendo 
+    sí capturar nombres con espacios.*/
+    cout << "\033[1;36mIngrese el tratamiento: \033[0m"; // En el código, se utilizan secuencias de escape ANSI para cambiar el color del texto en la consola.
+    scanf(" %[^\n]", a.treatment);
     cout << "\033[1;36mIngrese el dia de la cita (dd): \033[0m";
-    cin >> a.dates.day;
+    scanf(" %[^\n]", a.dates.day);
     cout << "\033[1;36mIngrese el mes de la cita (mm): \033[0m";
-    cin >> a.dates.month;
+    scanf(" %[^\n]", a.dates.month);
     cout << "\033[1;36mIngrese el año de la cita (yyyy): \033[0m";
-    cin >> a.dates.year;
+    scanf(" %[^\n]", a.dates.year);
     cout << "\033[1;36mIngrese la hora de la cita (hh): \033[0m";
-    cin >> a.time.hour;
+    scanf(" %[^\n]", a.time.hour);
     cout << "\033[1;36mIngrese los minutos de la cita (mm): \033[0m";
-    cin >> a.time.minute;
-
+    scanf(" %[^\n]", a.time.minute);
     addAppointment(&a); /*Llama a una funcion addAppointment pasandole la direccion de la variable a.*/
     saveAppointment(a);
 
@@ -240,24 +241,23 @@ void editAppointmentData()
     {
         cout << "Ingrese el nuevo nombre del paciente: ";
         cin.ignore();
-        getline(cin, a.namePatient);
-
+        scanf(" %[^\n]", a.namePatient);
         cout << "Ingrese el nuevo tratamiento: ";
-        getline(cin, a.treatment);
+        scanf(" %[^\n]", a.treatment);
 
         // Editar fecha
         cout << "Ingrese el nuevo dia de la cita (dd): ";
-        cin >> a.dates.day;
+        scanf(" %[^\n]", a.dates.day);
         cout << "Ingrese el nuevo mes de la cita (mm): ";
-        cin >> a.dates.month;
+        scanf(" %[^\n]", a.dates.month);
         cout << "Ingrese el nuevo año de la cita (yyyy): ";
-        cin >> a.dates.year;
+        scanf(" %[^\n]", a.dates.year);
 
         // Editar hora
         cout << "Ingrese la nueva hora de la cita (hh): ";
-        cin >> a.time.hour;
+        scanf(" %[^\n]", a.time.hour);
         cout << "Ingrese los nuevos minutos de la cita (mm): ";
-        cin >> a.time.minute;
+        scanf(" %[^\n]", a.time.minute);
 
         rewriteAppointment(&a, id);
         saveEntireAppoint();
