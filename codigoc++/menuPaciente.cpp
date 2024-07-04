@@ -184,16 +184,27 @@ void askDataAppointments(){
     sí capturar nombres con espacios.*/
     cout << "\033[1;36mIngrese el tratamiento: \033[0m"; // En el código, se utilizan secuencias de escape ANSI para cambiar el color del texto en la consola.
     scanf(" %[^\n]", a.treatment);
+    do{
     cout << "\033[1;36mIngrese el dia de la cita (dd): \033[0m";
     scanf(" %[^\n]", a.dates.day);
     cout << "\033[1;36mIngrese el mes de la cita (mm): \033[0m";
     scanf(" %[^\n]", a.dates.month);
-    cout << "\033[1;36mIngrese el año de la cita (yyyy): \033[0m";
+    cout << "\033[1;36mIngrese el anio de la cita (yyyy): \033[0m";
     scanf(" %[^\n]", a.dates.year);
+    if (!isValidDate(a.dates.day, a.dates.month, a.dates.year)){
+        cout << "Fecha invalida. Por favor ingrese una fecha valida.\n";
+    }
+ }while (!isValidDate(a.dates.day, a.dates.month, a.dates.year));
+    do{
     cout << "\033[1;36mIngrese la hora de la cita (hh): \033[0m";
     scanf(" %[^\n]", a.time.hour);
     cout << "\033[1;36mIngrese los minutos de la cita (mm): \033[0m";
     scanf(" %[^\n]", a.time.minute);
+     if (!isValidTime(a.time.hour, a.time.minute)) {
+        cout << "Hora invalida. Por favor ingrese una hora valida.\n";
+    }
+}while (!isValidTime(a.time.hour, a.time.minute));
+    
     addAppointment(&a); /*Llama a una funcion addAppointment pasandole la direccion de la variable a.*/
     saveAppointment(a);
 

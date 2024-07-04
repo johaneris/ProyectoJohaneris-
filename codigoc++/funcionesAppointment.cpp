@@ -27,6 +27,10 @@ void showData(APPOINTMENT &a);
 void addAppointment(APPOINTMENT *a);
 void rewriteAppointment(APPOINTMENT *a, int id);
 void deleteAppointment(int id);
+bool isValidDate(const char* day, const char* month, const char* year);
+bool isValidTime(const char* hour, const char* minute);
+bool isValidGender(const char* gender);
+bool isValidPhoneNumber(const char* number);
 
 // ==================================================================================
 // Funciones de Appointments
@@ -95,6 +99,50 @@ int getValidID()
         }
     }
 }
+//====================================================================================
+bool isValidDate(const char* day, const char* month, const char* year) {
+    int d = atoi(day);
+    int m = atoi(month);
+    int y = atoi(year);
+
+    if(y < 1000 || y > 9999) return false;
+    if(m < 1 || m > 12) return false;
+    if(d < 1 || d > 31) return false;
+
+    if(m == 2) {
+        bool isLeap = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+        if(isLeap && d > 29) return false;
+        if(!isLeap && d > 28) return false;
+    }
+
+    if((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) return false;
+
+    return true;
+}
+
+bool isValidTime(const char* hour, const char* minute) {
+    int h = atoi(hour);
+    int m = atoi(minute);
+
+    if(h < 0 || h > 23) return false;
+    if(m < 0 || m > 59) return false;
+
+    return true;
+}
+
+bool isValidGender(const char* gender) {
+    return strcmp(gender, "masculino") == 0 || strcmp(gender, "femenino") == 0;
+}
+
+bool isValidPhoneNumber(const char* number) {
+    if(strlen(number) != 8) return false;
+    for(int i = 0; i < 8; i++) {
+        if(!isdigit(number[i])) return false;
+    }
+    return true;
+}
+
+//========================================================================================================================
 
 // =========================================
 void showData(APPOINTMENT &a)
