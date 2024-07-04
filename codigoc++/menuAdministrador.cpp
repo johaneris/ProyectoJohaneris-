@@ -85,12 +85,23 @@ void askRegisterData()
     scanf(" %[^\n]", r.lastName);
     cout << "\033[1;36mIngrese la direccion de domicilio del paciente: \033[0m";
     scanf(" %[^\n]", r.address);
+    do{
     cout << "\033[1;36mIngrese el telefono del paciente (+505): \033[0m";
     scanf(" %[^\n]", r.number);
+    if (!isValidPhoneNumber(r.number)) {
+         cout << "Numero de telefono invalido. Por favor ingrese un numero valido.\n";
+        }
+    }while(!isValidPhoneNumber(r.number));
+    
+    do{
+    cout << "\033[1;36mIngrese el genero del paciente (masculino / femenino): \033[0m"; // mejorar esto para que solo se puedan elegir dos opciones
+    scanf(" %[^\n]", r.gender);
+    if(!isValidGender(r.gender)){ 
+        cout << "Genero invalido. Por favor ingrese un genero valido.\n";
+     }
+    }while(!isValidGender(r.gender));
     cout << "\033[1;36mIngrese la edad del paciente: \033[0m";
     scanf(" %[^\n]", r.age);
-    cout << "\033[1;36mIngrese el genero del paciente (masculino o femenino): \033[0m"; // mejorar esto para que solo se puedan elegir dos opciones
-    scanf(" %[^\n]", r.gender);
     cout << "\033[1;36mIngrese el historial medico del paciente: \033[0m";
     scanf(" %[^\n]", r.medicalHistory);
     cout << "\033[1;36mIngrese los la razon del la cita:  \033[0m";

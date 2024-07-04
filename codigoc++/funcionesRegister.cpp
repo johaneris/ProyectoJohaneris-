@@ -1,4 +1,6 @@
 #include <iostream>
+#include <climits>
+#include <cctype>
 
 #include "funcionesAppointment.cpp"
 
@@ -9,6 +11,8 @@ void addRegister(REGISTER *r);
 void deleteRegister(int id);
 void editRegister(REGISTER *r, int id);
 REGISTER identifyRegisterByID(int id);
+bool isValidPhoneNumber(const char* number);
+bool isValidGender(const char* gender);
 
 // ==================================================================================
 // Funciones de Register
@@ -24,6 +28,18 @@ void addRegister(REGISTER *r)
     {
         cout << "\033[1;31mNo se pueden agregar mas registros\033[0m\n";
     }
+}
+//==========================================
+bool isValidGender(const char* gender){
+    return strcmp(gender, "masculino") == 0 || strcmp(gender, "femenino") == 0;
+}
+
+bool isValidPhoneNumber(const char* number) {
+    if(strlen(number) != 8) return false;
+    for(int i = 0; i < 8; i++) {
+        if(!isdigit(number[i])) return false;
+    }
+    return true;
 }
 
 // =========================================

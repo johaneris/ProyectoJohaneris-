@@ -1,4 +1,6 @@
 #include <iostream>
+#include <climits>
+#include <cctype>
 
 #include "saveYload.cpp"
 
@@ -29,8 +31,7 @@ void rewriteAppointment(APPOINTMENT *a, int id);
 void deleteAppointment(int id);
 bool isValidDate(const char* day, const char* month, const char* year);
 bool isValidTime(const char* hour, const char* minute);
-bool isValidGender(const char* gender);
-bool isValidPhoneNumber(const char* number);
+
 
 // ==================================================================================
 // Funciones de Appointments
@@ -124,21 +125,9 @@ bool isValidTime(const char* hour, const char* minute) {
     int h = atoi(hour);
     int m = atoi(minute);
 
-    if(h < 0 || h > 23) return false;
+    if(h < 0 || h > 12) return false;
     if(m < 0 || m > 59) return false;
 
-    return true;
-}
-
-bool isValidGender(const char* gender) {
-    return strcmp(gender, "masculino") == 0 || strcmp(gender, "femenino") == 0;
-}
-
-bool isValidPhoneNumber(const char* number) {
-    if(strlen(number) != 8) return false;
-    for(int i = 0; i < 8; i++) {
-        if(!isdigit(number[i])) return false;
-    }
     return true;
 }
 
