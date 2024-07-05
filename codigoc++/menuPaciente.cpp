@@ -90,7 +90,7 @@ void menuPaciente()
 // =========================================
 void ShowDentalTreatments()
 {
-    cout << "\033[1;35----------tratamientos dentales disponibles (precios en cordobas)---------\033[0m\n";
+    cout << "\033[1;35m----------tratamientos dentales disponibles (precios en cordobas)---------\033[0m\n";
     cout << "1. Limpieza dental -- 650 C$\n";
     cout << "2. Restauracion de resina -- 750 C$\n";
     cout << "3. Protesis total -- 6,500 C$\n";
