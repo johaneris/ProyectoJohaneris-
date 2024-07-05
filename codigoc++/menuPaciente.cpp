@@ -114,7 +114,7 @@ void showPricesInDolares()
 // =========================================
 void showClinicHours()
 {
-    cout << "------------Horarios de atenci�n disponibles------------\n";
+    cout << "------------Horarios de atencion disponibles------------\n";
     cout << "Lunes a Viernes: 8:00 AM - 12 PM / 1 PM - 5:00 PM\n";
     cout << "Sabados: 9:00 AM - 1:00 PM\n";
     cout << "Domingos: Cerrado\n";
@@ -127,7 +127,7 @@ void menuProgramarCita()
 
     do {
         string ID_INPUT;
-        cout << "---- Autenticaci�n ----\n";
+        cout << "---- Autenticacion ----\n";
         cout << "Inserte su ID de Paciente: ";
         cin >> ID_INPUT;
         if(existeIDPaciente(ID_INPUT)) {
@@ -147,7 +147,7 @@ void menuProgramarCita()
                 posPacientes++;
                 savePacientes();
                 validado = true;
-                cout << "ID creado con exito!\n";
+                cout << "ID creado de manera exitosa\n";
                 system("pause");
             }
         }

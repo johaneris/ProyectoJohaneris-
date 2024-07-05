@@ -257,7 +257,7 @@ void showRegisters()
 // enfasis aqui
 void showRegisterByID()
 {
-    int id = getValidID();
+    int id = getValidIDRegisternumber();
     REGISTER r = identifyRegisterByID(id);
     if (r.id != 0)
     {

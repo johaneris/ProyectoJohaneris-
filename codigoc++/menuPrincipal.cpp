@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string.h>
 #include <locale.h>
+
 #include "menuAdministrador.cpp"
+
 
 
 void mainMenu() {
