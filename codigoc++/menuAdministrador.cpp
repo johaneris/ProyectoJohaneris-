@@ -210,7 +210,7 @@ void menuAdministradorRegistros()
 void askRegisterData()
 {
     REGISTER r;
-    r.id = getValidID();
+    r.id = getValidIDRegister();
      cout << "\033[1;36mIngrese el nombre del paciente: \033[0m";
     scanf(" %[^\n]", r.name);
     cout << "\033[1;36mIngrese el apellido del paciente: \033[0m";
@@ -289,7 +289,7 @@ void showRegisterData(REGISTER &r)
 // =========================================
 void editRegisterData()
 {
-    int id = getValidID();
+    int id = getValidIDRegister();
     REGISTER r = identifyRegisterByID(id);
     if (r.id != 0)
     {
