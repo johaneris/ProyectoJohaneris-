@@ -66,7 +66,7 @@ void menuAdministradorGeneral() {
     do {
         system("cls");
         string usuario, password;
-        cout << "---- Autenticaci�n ----\n";
+        cout << "---- Autenticacion ----\n";
         cout << "Inserte el usuario de administrador: ";
         cin >> usuario;
 
@@ -257,7 +257,7 @@ void showRegisters()
 // enfasis aqui
 void showRegisterByID()
 {
-    int id = getValidID();
+    int id = getValidIDRegisternumber();
     REGISTER r = identifyRegisterByID(id);
     if (r.id != 0)
     {

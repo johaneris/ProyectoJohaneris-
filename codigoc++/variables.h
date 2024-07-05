@@ -66,3 +66,5 @@ int posPacientes = 0;
 
 string adUSUARIO = "admin";
 string adPASS = "1234";
+
+

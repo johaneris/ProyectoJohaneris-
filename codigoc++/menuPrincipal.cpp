@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string.h>
 #include <locale.h>
+
 #include "menuAdministrador.cpp"
+
 
 
 void mainMenu() {
@@ -13,7 +15,7 @@ void mainMenu() {
         system("cls");
         cout << "\033[1;34mBienvenido al sistema de clinica dental los olivos\033[0m\n";
         cout << "1. Paciente\n";
-        cout << "2. Doctor\n";
+        cout << "2. Doctor(administrador)\n";
         cout << "3. Cerrar Sesion\n";
         cout << "Ingrese una opcion: ";
 

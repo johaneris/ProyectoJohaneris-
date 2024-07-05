@@ -12,7 +12,7 @@ bool validarOpcion(int variable, int primera_opcion, int ultima_opcion) {
     return resultado; // Va a retornar falso si la opcion no es valida
 }
 // =========================================
-// Men� Paciente
+// Menu Paciente
 
 void menuPaciente(); // Funcion Principal
 
@@ -90,7 +90,7 @@ void menuPaciente()
 // =========================================
 void ShowDentalTreatments()
 {
-    cout << "----------tratamientos dentales disponibles (precios en cordobas)---------\n";
+    cout <<"\033[1;35m----------tratamientos dentales disponibles (precios en cordobas)---------\033[0m\n";
     cout << "1. Limpieza dental -- 650 C$\n";
     cout << "2. Restauracion de resina -- 750 C$\n";
     cout << "3. Protesis total -- 6,500 C$\n";
@@ -102,7 +102,7 @@ void ShowDentalTreatments()
 // =========================================
 void showPricesInDolares()
 {
-    cout << "----------tratamientos dentales disponibles (precios en dolares)---------\n";
+    cout << "\033[1;35m----------tratamientos dentales disponibles (precios en dolares)---------\033[0m\n";
     cout << "1. Limpieza Dental - " << 650 / EXCHANGE_RATE << " $ \n";
     cout << "2. Restauracion de resina - " << 750 / EXCHANGE_RATE << " $ \n";
     cout << "3. Protesis total - " << 6500 / EXCHANGE_RATE << " $ \n";
@@ -114,7 +114,7 @@ void showPricesInDolares()
 // =========================================
 void showClinicHours()
 {
-    cout << "------------Horarios de atenci�n disponibles------------\n";
+    cout << "\033[1;35m------------Horarios de atencion disponibles------------\033[0m\n";
     cout << "Lunes a Viernes: 8:00 AM - 12 PM / 1 PM - 5:00 PM\n";
     cout << "Sabados: 9:00 AM - 1:00 PM\n";
     cout << "Domingos: Cerrado\n";
@@ -127,12 +127,12 @@ void menuProgramarCita()
 
     do {
         string ID_INPUT;
-        cout << "---- Autenticaci�n ----\n";
+        cout << "\033[1;31m---- Autenticacion ----\033[0m\n";
         cout << "Inserte su ID de Paciente: ";
         cin >> ID_INPUT;
         if(existeIDPaciente(ID_INPUT)) {
             IDPaciente = ID_INPUT;
-            cout << "Acceso ganado!\n";
+            cout << "Acceso exitoso!\n";
             validado = true;
             system("pause");
         } else {
@@ -147,7 +147,7 @@ void menuProgramarCita()
                 posPacientes++;
                 savePacientes();
                 validado = true;
-                cout << "ID creado con exito!\n";
+                cout << "ID creado!\n";
                 system("pause");
             }
         }
@@ -265,7 +265,7 @@ void showPacienteAppointmentByID() {
     if(a.idPaciente == IDPaciente && a.id != -1) {
         showData(a);
     } else {
-        cout << "La cita no se encontr� o no se puede accesar.\n";
+        cout << "La cita no se encontro o no se puede accesar.\n";
     }
 }
 
@@ -340,7 +340,7 @@ void editPacienteAppointmentData() {
     }
     else
     {
-        cout << "La cita no se encontr� o no se puede accesar.\n";
+        cout << "La cita no se encontro o no se puede accesar.\n";
     }
 }
 
@@ -369,7 +369,7 @@ void deletePacienteData() {
         saveEntireAppoint();
         cout << "Cita eliminada.\n";
     } else {
-        cout << "La cita no se encontr� o no se puede accesar.\n";
+        cout << "La cita no se encontro o no se puede accesar.\n";
     }
 }
 

@@ -50,7 +50,7 @@ APPOINTMENT identify_ID(int id)
             return appointments[i];
         }
     }
-    APPOINTMENT a = {-1, "", "", "", {"", ""}, {"", "", ""}}; /*Esto es como decir "Si no encontramos la cita, devolvamos una
+    APPOINTMENT a = {0, "", "", "", {"", ""}, {"", "", ""}}; /*Esto es como decir "Si no encontramos la cita, devolvamos una
     cita vacia para indicar que no se encontr�", entones se inicializa
     con valores por defecto.*/
     return a;
@@ -79,7 +79,7 @@ int getValidID()
      encontremos una razon para salir de el. En este caso, queremos que el usuario
      siga intentando ingresar un ID valido hasta que lo consiga.*/
     {
-        cout << "Ingrese el numero de su cita (solo numeros): ";
+        cout << "\033[1;36mIngrese el numero de su cita (solo numeros): \033[0m" ;
         cin >> id;
         if (cin.fail() || id < 0) /* cin.fail() devuelve true si la entrada no es
          un numero entero. Si esto ocurre, se ejecutan los siguientes paso*/
@@ -106,7 +106,7 @@ bool isValidDate(const char* day, const char* month, const char* year) {
     int m = atoi(month);
     int y = atoi(year);
 
-    if(y < 1000 || y > 9999) return false;
+    if(y < 2024 || y > 2025) return false;
     if(m < 1 || m > 12) return false;
     if(d < 1 || d > 31) return false;
 
@@ -125,7 +125,7 @@ bool isValidTime(const char* hour, const char* minute) {
     int h = atoi(hour);
     int m = atoi(minute);
 
-    if(h < 0 || h > 12) return false;
+    if(h < 0 || h > 23) return false;
     if(m < 0 || m > 59) return false;
 
     return true;
