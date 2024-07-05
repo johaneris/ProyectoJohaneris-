@@ -12,7 +12,7 @@ bool validarOpcion(int variable, int primera_opcion, int ultima_opcion) {
     return resultado; // Va a retornar falso si la opcion no es valida
 }
 // =========================================
-// Men� Paciente
+// Menu Paciente
 
 void menuPaciente(); // Funcion Principal
 
@@ -114,7 +114,7 @@ void showPricesInDolares()
 // =========================================
 void showClinicHours()
 {
-    cout << "------------Horarios de atencion disponibles------------\n";
+    cout << "------------Horarios de atenci�n disponibles------------\n";
     cout << "Lunes a Viernes: 8:00 AM - 12 PM / 1 PM - 5:00 PM\n";
     cout << "Sabados: 9:00 AM - 1:00 PM\n";
     cout << "Domingos: Cerrado\n";
@@ -127,7 +127,7 @@ void menuProgramarCita()
 
     do {
         string ID_INPUT;
-        cout << "---- Autenticacion ----\n";
+        cout << "---- Autenticaci�n ----\n";
         cout << "Inserte su ID de Paciente: ";
         cin >> ID_INPUT;
         if(existeIDPaciente(ID_INPUT)) {
@@ -147,7 +147,7 @@ void menuProgramarCita()
                 posPacientes++;
                 savePacientes();
                 validado = true;
-                cout << "ID creado de manera exitosa\n";
+                cout << "ID creado con exito!\n";
                 system("pause");
             }
         }
@@ -265,7 +265,7 @@ void showPacienteAppointmentByID() {
     if(a.idPaciente == IDPaciente && a.id != -1) {
         showData(a);
     } else {
-        cout << "La cita no se encontr� o no se puede accesar.\n";
+        cout << "La cita no se encontro o no se puede accesar.\n";
     }
 }
 
@@ -340,7 +340,7 @@ void editPacienteAppointmentData() {
     }
     else
     {
-        cout << "La cita no se encontr� o no se puede accesar.\n";
+        cout << "La cita no se encontro o no se puede accesar.\n";
     }
 }
 
@@ -369,7 +369,7 @@ void deletePacienteData() {
         saveEntireAppoint();
         cout << "Cita eliminada.\n";
     } else {
-        cout << "La cita no se encontr� o no se puede accesar.\n";
+        cout << "La cita no se encontro o no se puede accesar.\n";
     }
 }
 

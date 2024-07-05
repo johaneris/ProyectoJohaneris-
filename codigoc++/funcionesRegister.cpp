@@ -13,8 +13,6 @@ void editRegister(REGISTER *r, int id);
 REGISTER identifyRegisterByID(int id);
 bool isValidPhoneNumber(const char* number);
 bool isValidGender(const char* gender);
-int getValidIDRegisternumber();
-
 
 // ==================================================================================
 // Funciones de Register
@@ -89,33 +87,4 @@ REGISTER identifyRegisterByID(int id)
 cita vacia para indicar que no se encontro", entones se inicializa
 con valores por defecto.*/
     return r;
-}
-
-int getValidIDRegisternumber()
-{
-    int id;
-    while (true) /*Este es un bucle infinito que se ejecutara hasta que
-     encontremos una razon para salir de el. En este caso, queremos que el usuario
-     siga intentando ingresar un ID valido hasta que lo consiga.*/
-    {
-        cout << "Ingrese el numero del registro (solo numeros): ";
-        cin >> id;
-        if (cin.fail() || id < 0) /* cin.fail() devuelve true si la entrada no es
-         un numero entero. Si esto ocurre, se ejecutan los siguientes paso*/
-        {
-            cin.clear() /*Esta funcion limpia el estado de error de cin.
-              Es como reiniciar el estado de entrada para que pueda aceptar nuevas entradas.*/
-                ;
-            cin.ignore(10000, '\n') /* Esta funcion ignora los caracteres en el bufer de entrada
-              hasta encontrar un salto de linea (\n) o hasta haber ignorado 10,000 caracteres, lo que
-               ocurra primero. Esto limpia cualquier entrada residual que el usuario haya dejado.*/
-                ;
-            cout << "Entrada invalida. Por favor ingrese un numero valido.\n";
-        }
-        else
-        {
-            cin.ignore(10000, '\n');
-            return id;
-        }
-    }
 }
