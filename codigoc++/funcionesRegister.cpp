@@ -98,7 +98,7 @@ int getValidIDRegisternumber()
      encontremos una razon para salir de el. En este caso, queremos que el usuario
      siga intentando ingresar un ID valido hasta que lo consiga.*/
     {
-        cout << "Ingrese el numero de su cita (solo numeros): ";
+        cout << "Ingrese el numero del registro (solo numeros): ";
         cin >> id;
         if (cin.fail() || id < 0) /* cin.fail() devuelve true si la entrada no es
          un numero entero. Si esto ocurre, se ejecutan los siguientes paso*/

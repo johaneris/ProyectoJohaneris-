@@ -1,1 +1,9 @@
-
+2; ID
+1; ID DE PACIENTE
+johaneris; NOMBRE DEL PACIENTE
+bolanqueamiento; TRATAMIENTO
+12; DIA
+12; MES
+2022; AÑO
+12; HORA
+12; MINUTO

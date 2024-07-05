@@ -79,7 +79,7 @@ int getValidID()
      encontremos una razon para salir de el. En este caso, queremos que el usuario
      siga intentando ingresar un ID valido hasta que lo consiga.*/
     {
-        cout << "Ingrese el numero de su cita (solo numeros): ";
+        cout << "\033[1;36mIngrese el numero de su cita (solo numeros):\033[0m";
         cin >> id;
         if (cin.fail() || id < 0) /* cin.fail() devuelve true si la entrada no es
          un numero entero. Si esto ocurre, se ejecutan los siguientes paso*/
