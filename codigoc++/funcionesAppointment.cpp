@@ -106,7 +106,7 @@ bool isValidDate(const char* day, const char* month, const char* year) {
     int m = atoi(month);
     int y = atoi(year);
 
-    if(y < 1000 || y > 9999) return false;
+    if(y < 2024 || y > 2025) return false;
     if(m < 1 || m > 12) return false;
     if(d < 1 || d > 31) return false;
 

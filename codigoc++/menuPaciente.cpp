@@ -90,7 +90,7 @@ void menuPaciente()
 // =========================================
 void ShowDentalTreatments()
 {
-    cout << "----------tratamientos dentales disponibles (precios en cordobas)---------\n";
+    cout << "\033[1;35----------tratamientos dentales disponibles (precios en cordobas)---------\033[0m\n";
     cout << "1. Limpieza dental -- 650 C$\n";
     cout << "2. Restauracion de resina -- 750 C$\n";
     cout << "3. Protesis total -- 6,500 C$\n";
@@ -102,7 +102,7 @@ void ShowDentalTreatments()
 // =========================================
 void showPricesInDolares()
 {
-    cout << "----------tratamientos dentales disponibles (precios en dolares)---------\n";
+    cout << "\033[1;35m----------tratamientos dentales disponibles (precios en dolares)---------\033[0m\n";
     cout << "1. Limpieza Dental - " << 650 / EXCHANGE_RATE << " $ \n";
     cout << "2. Restauracion de resina - " << 750 / EXCHANGE_RATE << " $ \n";
     cout << "3. Protesis total - " << 6500 / EXCHANGE_RATE << " $ \n";
@@ -114,7 +114,7 @@ void showPricesInDolares()
 // =========================================
 void showClinicHours()
 {
-    cout << "------------Horarios de atenci�n disponibles------------\n";
+    cout << "\033[1;35m------------Horarios de atencion disponibles------------\033[0m\n";
     cout << "Lunes a Viernes: 8:00 AM - 12 PM / 1 PM - 5:00 PM\n";
     cout << "Sabados: 9:00 AM - 1:00 PM\n";
     cout << "Domingos: Cerrado\n";
@@ -127,7 +127,7 @@ void menuProgramarCita()
 
     do {
         string ID_INPUT;
-        cout << "---- Autenticaci�n ----\n";
+        cout << "\033[1;31m---- Autenticacion ----\033[0m\n";
         cout << "Inserte su ID de Paciente: ";
         cin >> ID_INPUT;
         if(existeIDPaciente(ID_INPUT)) {
