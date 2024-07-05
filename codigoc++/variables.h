@@ -8,12 +8,11 @@ using namespace std;
 
 #define APPOINTMENTS_FILE "appointment.txt"
 #define REGISTERS_FILE "register.txt"
+#define PACIENTES_FILE "pacientes.txt"
 
 //para convertir precios 
 #define EXCHANGE_RATE 36.5 // Tasa de cambio ejemplo de dólar a córdobas
 
-
-#include <iostream>
 using namespace std;
 
 
@@ -31,7 +30,8 @@ struct DATE{
 };
 
 struct APPOINTMENT{
-    int id;
+    int id = -1;
+    string idPaciente;
     char namePatient[21];
     char treatment[51];
     SCHEDULE time;
@@ -50,7 +50,6 @@ struct REGISTER{
     char medicalHistory[50];
 }; 
 
-
 // =========================================
 // Declaracion de Arreglos Globales
 APPOINTMENT appointments[MAX_APPOINTMENTS];
@@ -58,3 +57,12 @@ int posAppointment = 0;
 
 REGISTER registers[MAX_REGISTERS];
 int posRegister = 0;
+
+// =========================================
+// Declaracion de Variables Globales
+string IDPaciente;
+string IDPacientes[200];
+int posPacientes = 0;
+
+string adUSUARIO = "admin";
+string adPASS = "1234";

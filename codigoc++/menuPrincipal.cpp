@@ -1,13 +1,10 @@
 #include <iostream>
 #include <string.h>
 #include <locale.h>
-
 #include "menuAdministrador.cpp"
 
 
-
 void mainMenu() {
-    setlocale(LC_ALL, "spanish");
 
     int user;
 
@@ -17,7 +14,7 @@ void mainMenu() {
         cout << "\033[1;34mBienvenido al sistema de clinica dental los olivos\033[0m\n";
         cout << "1. Paciente\n";
         cout << "2. Doctor\n";
-        cout << "3. Salir\n";
+        cout << "3. Cerrar Sesion\n";
         cout << "Ingrese una opcion: ";
 
         while ((cin >> user) && !validarOpcion(user, 1, 3))
@@ -34,10 +31,10 @@ void mainMenu() {
                 menuPaciente();
                 break;
             case 2:
-                menuAdministrador();
+                menuAdministradorGeneral();
                 break;
             case 3:
-                exit(0); // Salir del programa por algo la funcion se llama exit
+                return; // Salir del programa por algo la funcion se llama exit
                 break;
             default:
                 cout << "Opcion invalida. Por favor intente de nuevo.\n";

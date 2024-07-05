@@ -1,15 +1,47 @@
 #include <iostream>
+#include <conio.h>
+#include <string>
 
 #include "menuPaciente.cpp"
 
 
 
+// =========================================
+// Password
 
+void passwordGet(string &inp) {
+    char BACKSPACE = '\b';
+    char ENTER = '\r';
+    char TAB = '\t';
+    char VOID = '\0';
+
+    char ch = getch();
+    string return_string = "";
+
+    while(ch != ENTER || return_string.length() <= 0) {
+        if(ch == BACKSPACE) {
+            if(return_string.length() > 0) {
+                return_string.resize(return_string.length() - 1);
+                cout << "\b \b";
+            }
+        }  else if(ch == ENTER || ch == TAB || ch == VOID) {
+            ch = getch(); continue;
+        } else {
+            return_string += ch;
+            cout << '*';
+        }
+
+        ch = getch();
+    }
+    inp = return_string;
+}
 
 // =========================================
 // Menu de Administrador
 
-void menuAdministrador(); // Funcion Principal
+void menuAdministradorGeneral(); // Funcion Principal
+void menuAdministradorCitas();
+void menuAdministradorRegistros();
 
     // =========================================
     // Opciones del Menu
@@ -26,13 +58,113 @@ void menuAdministrador(); // Funcion Principal
 // ==================================================================================
 
 // =========================================
-void menuAdministrador()
+void menuAdministradorGeneral() {
+    int option;
+
+    bool validado = false;
+
+    do {
+        system("cls");
+        string usuario, password;
+        cout << "---- Autenticaci�n ----\n";
+        cout << "Inserte el usuario de administrador: ";
+        cin >> usuario;
+
+        cout << "Inserte la contrasena proporcionada: ";
+        passwordGet(password);
+
+        if(usuario == adUSUARIO && password == adPASS) {
+            validado = true;
+            cout << "Acceso Garantizado!\n";
+        } else {
+            cout << "Los datos son incorrectos, desea intentar de nuevo? (S/N): ";
+            char SN;
+            cin >> SN;
+
+            if(SN == 'n' || SN == 'N') return;
+        }
+    } while(!validado);
+
+    do {
+        system("cls");
+        system("cls"); 
+        cout << "\033[1;94m-----------Menu General (Administrador)--------\033[0m\n";
+        cout << "1. Menu de Citas\n";
+        cout << "2. Menu de Registros\n";
+        cout << "3. Cerrar Sesion\n";
+        cout << "Ingrese una opcion: ";
+
+        cin >> option;
+
+        switch(option) {
+            case 1:
+            menuAdministradorCitas();
+            break;
+
+            case 2:
+            menuAdministradorRegistros();
+            break;
+
+            case 3:
+            cout << "Saliendo...\n";
+            break;
+
+            if(option != 3) {
+                system("pause");
+            }
+        }
+    } while(option != 3);
+}
+
+// =========================================
+void menuAdministradorCitas()
 {
     int option;
     do
     {
         system("cls"); 
-        cout << "\033[1;94m-----------Menu de registro(Administrador)--------\033[0m\n";
+        cout << "\033[1;94m-----------Menu de Citas (Administrador)--------\033[0m\n";
+        cout << "1. Mostrar todas las citas\n";
+        cout << "2. Mostrar cita segun ID\n";
+        cout << "3. Editar cita\n";
+        cout << "4. Eliminar cita\n";
+        cout << "5. Salir\n";
+        cout << "Ingrese una opcion: ";
+        cin >> option;
+        cin.ignore();
+
+        switch (option){
+        case 1:
+            showAppointments();
+            break;
+        case 2:
+            showAppointmentByID();
+            break;
+        case 3:
+            editAppointmentData();
+            break;
+        case 4:
+            deleteData();
+            break;
+        case 5:
+            cout << "Saliendo\n";
+            break;
+        }
+        if (option != 5)
+        {
+            system("pause");
+        }
+    } while (option != 5);
+}
+
+// =========================================
+void menuAdministradorRegistros()
+{
+    int option;
+    do
+    {
+        system("cls"); 
+        cout << "\033[1;94m-----------Menu de Registros (Administrador)--------\033[0m\n";
         cout << "1. Agregar registro\n";
         cout << "2. Mostrar todos los registros\n";
         cout << "3. Mostrar registro segun ID\n";
@@ -119,8 +251,6 @@ void showRegisters()
     {
         showRegisterData(registers[i]);
     }
-
-    system("pause");
 }
 
 // =========================================
@@ -183,7 +313,6 @@ void editRegisterData()
     }
 
     saveEntireRegister();
-    system("pause");
 }
 
 // =========================================
@@ -193,5 +322,4 @@ void removeRegisterData()
     deleteRegister(id);
     saveEntireRegister();
     cout << "registro eliminado\n";
-    system("pause");
 }

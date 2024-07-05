@@ -83,7 +83,7 @@ REGISTER identifyRegisterByID(int id)
             return registers[i];
         }
     }
-    REGISTER r = {0, "", "", "", "", "", "", "", "", }; /*Esto es como decir "Si no encontramos la cita, devolvamos una
+    REGISTER r = {0, "", "", "", "", "", "", "", ""}; /*Esto es como decir "Si no encontramos la cita, devolvamos una
 cita vacia para indicar que no se encontro", entones se inicializa
 con valores por defecto.*/
     return r;

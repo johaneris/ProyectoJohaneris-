@@ -50,7 +50,7 @@ APPOINTMENT identify_ID(int id)
             return appointments[i];
         }
     }
-    APPOINTMENT a = {0, "", "", {"", ""}, {"", "", ""}}; /*Esto es como decir "Si no encontramos la cita, devolvamos una
+    APPOINTMENT a = {-1, "", "", "", {"", ""}, {"", "", ""}}; /*Esto es como decir "Si no encontramos la cita, devolvamos una
     cita vacia para indicar que no se encontr�", entones se inicializa
     con valores por defecto.*/
     return a;
@@ -81,7 +81,7 @@ int getValidID()
     {
         cout << "Ingrese el numero de su cita (solo numeros): ";
         cin >> id;
-        if (cin.fail()) /* cin.fail() devuelve true si la entrada no es
+        if (cin.fail() || id < 0) /* cin.fail() devuelve true si la entrada no es
          un numero entero. Si esto ocurre, se ejecutan los siguientes paso*/
         {
             cin.clear() /*Esta funcion limpia el estado de error de cin.
@@ -181,7 +181,7 @@ void rewriteAppointment(APPOINTMENT *a, int id)
 // =========================================
 void deleteAppointment(int id)
 {
-    int posi = findAppointmentPos(id);
+    int posi = id;
     if (posi != -1)
     {
         for (int i = posi; i < posAppointment - 1; i++)

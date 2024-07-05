@@ -29,10 +29,16 @@ void menuPaciente(); // Funcion Principal
 
         void askDataAppointments();
         void showAppointmentByID();
-        void appointmentxID();
         void editAppointmentData();
         void deleteData();
         void showAppointments();
+
+        void showPacienteAppointmentByID();
+        void editPacienteAppointmentData();
+        void deletePacienteData();
+        void showPacienteAppointments();
+
+        bool existeIDPaciente(string ID);
 
 // ==================================================================================
 // Menu Pacientes
@@ -117,6 +123,36 @@ void showClinicHours()
 // =========================================
 void menuProgramarCita()
 {
+    bool validado = false;
+
+    do {
+        string ID_INPUT;
+        cout << "---- Autenticaci�n ----\n";
+        cout << "Inserte su ID de Paciente: ";
+        cin >> ID_INPUT;
+        if(existeIDPaciente(ID_INPUT)) {
+            IDPaciente = ID_INPUT;
+            cout << "Acceso ganado!\n";
+            validado = true;
+            system("pause");
+        } else {
+            cout << "El ID no existe, desea crearlo? (S/N): ";
+            char SN;
+            cin >> SN;
+
+            if(SN == 'N' || SN == 'n') return;
+            else {
+                IDPaciente = ID_INPUT;
+                IDPacientes[posPacientes] = ID_INPUT;
+                posPacientes++;
+                savePacientes();
+                validado = true;
+                cout << "ID creado con exito!\n";
+                system("pause");
+            }
+        }
+    } while(!validado);
+
     while(true) {
         system("cls");
         int option;
@@ -124,11 +160,10 @@ void menuProgramarCita()
         cout << "\033[1;34mAgendar citas - Menu\033[0m\n";
         cout << "1. Agendar cita\n";
         cout << "2. Mostrar cita por ID\n";
-        cout << "3. Buscar cita por ID\n";
-        cout << "4. Editar cita\n";
-        cout << "5. Eliminar cita\n";
-        cout << "6. Mostrar todas las citas\n";
-        cout << "7. Salir\n";
+        cout << "3. Editar cita\n";
+        cout << "4. Eliminar cita\n";
+        cout << "5. Mostrar todas mis citas\n";
+        cout << "6. Salir\n";
         cout << "Ingrese una opcion: ";
         cin >> option;
 
@@ -140,28 +175,25 @@ void menuProgramarCita()
             askDataAppointments();
             break;
         case 2:
-            showAppointmentByID();
+            showPacienteAppointmentByID();
             break;
         case 3:
-            appointmentxID();
+            editPacienteAppointmentData();
             break;
         case 4:
-            editAppointmentData();
+            deletePacienteData();
             break;
         case 5:
-            deleteData();
+            showPacienteAppointments();
             break;
         case 6:
-            showAppointments();
-            break;
-        case 7:
             cout << "Saliendo\n";
             return;
         default:
             cout << "Opcion invalida\n";
             break;
         }
-        if (option != 7)
+        if (option != 6)
         {
             system("pause");
         }
@@ -205,6 +237,7 @@ void askDataAppointments(){
     }
 }while (!isValidTime(a.time.hour, a.time.minute));
     
+    a.idPaciente = IDPaciente;
     addAppointment(&a); /*Llama a una funcion addAppointment pasandole la direccion de la variable a.*/
     saveAppointment(a);
 
@@ -215,7 +248,7 @@ void showAppointmentByID()
 {
     int id = getValidID();
     APPOINTMENT a = identify_ID(id);
-    if (a.id != 0)
+    if (a.id != -1)
     {
         showData(a);
     }
@@ -223,24 +256,17 @@ void showAppointmentByID()
     {
         cout << "Cita no encontrada.\n";
     }
-    
-    system("pause");
 }
 
 // =========================================
-void appointmentxID()
-{
+void showPacienteAppointmentByID() {
     int id = getValidID();
     APPOINTMENT a = identify_ID(id);
-    if (a.id != 0)
-    {
+    if(a.idPaciente == IDPaciente && a.id != -1) {
         showData(a);
+    } else {
+        cout << "La cita no se encontr� o no se puede accesar.\n";
     }
-    else
-    {
-        cout << "Cita no encontrada.\n";
-    }
-    system("pause");
 }
 
 // =========================================
@@ -248,7 +274,7 @@ void editAppointmentData()
 {
     int id = getValidID();
     APPOINTMENT a = identify_ID(id);
-    if (a.id != 0)
+    if (a.id != -1)
     {
         cout << "Ingrese el nuevo nombre del paciente: ";
         cin.ignore();
@@ -278,21 +304,76 @@ void editAppointmentData()
     {
         cout << "Cita no encontrada.\n";
     }
-    system("pause");
+}
+
+// =========================================
+void editPacienteAppointmentData() {
+
+    int id = getValidID();
+    APPOINTMENT a = identify_ID(id);
+
+    if (a.idPaciente == IDPaciente && a.id != -1)
+    {
+        cout << "Ingrese el nuevo nombre del paciente: ";
+        cin.ignore();
+        scanf(" %[^\n]", a.namePatient);
+        cout << "Ingrese el nuevo tratamiento: ";
+        scanf(" %[^\n]", a.treatment);
+
+        // Editar fecha
+        cout << "Ingrese el nuevo dia de la cita (dd): ";
+        scanf(" %[^\n]", a.dates.day);
+        cout << "Ingrese el nuevo mes de la cita (mm): ";
+        scanf(" %[^\n]", a.dates.month);
+        cout << "Ingrese el nuevo año de la cita (yyyy): ";
+        scanf(" %[^\n]", a.dates.year);
+
+        // Editar hora
+        cout << "Ingrese la nueva hora de la cita (hh): ";
+        scanf(" %[^\n]", a.time.hour);
+        cout << "Ingrese los nuevos minutos de la cita (mm): ";
+        scanf(" %[^\n]", a.time.minute);
+
+        rewriteAppointment(&a, id);
+        saveEntireAppoint();
+        cout << "Se actualizo su cita...\n";
+    }
+    else
+    {
+        cout << "La cita no se encontr� o no se puede accesar.\n";
+    }
 }
 
 // =========================================
 void deleteData()
 {
     int id = getValidID();
-    deleteAppointment(id);
-    saveEntireAppoint();
-    cout << "Cita eliminada.\n";
-    system("pause");
+    APPOINTMENT a = identify_ID(id);
+
+    if(a.id != -1) {
+        deleteAppointment(id);
+        saveEntireAppoint();
+        cout << "Cita eliminada.\n";
+    } else {
+        cout << "Cita no encontrada.\n";
+    }
 }
 
 // =========================================
+void deletePacienteData() {
+    int id = getValidID();
+    APPOINTMENT a = identify_ID(id);
 
+    if(a.idPaciente == IDPaciente && a.id != -1) {
+        deleteAppointment(id);
+        saveEntireAppoint();
+        cout << "Cita eliminada.\n";
+    } else {
+        cout << "La cita no se encontr� o no se puede accesar.\n";
+    }
+}
+
+// =========================================
 void showAppointments()
 {
     system("cls");
@@ -300,5 +381,21 @@ void showAppointments()
     {
         showData(appointments[i]);
     }
-    system("pause");
+}
+
+// =========================================
+void showPacienteAppointments()
+{
+    system("cls");
+    for(int i = 0; i < posAppointment; i++) {
+        if(appointments[i].idPaciente == IDPaciente) showData(appointments[i]);
+    }
+}
+
+// =========================================
+bool existeIDPaciente(string ID) {
+    for(int i = 0; i < posPacientes; i++) {
+        if(IDPacientes[i] == ID) return true;
+    }
+    return false;
 }
