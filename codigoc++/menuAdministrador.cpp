@@ -66,7 +66,7 @@ void menuAdministradorGeneral() {
     do {
         system("cls");
         string usuario, password;
-        cout << "---- Autenticación ----\n";
+        cout << "\033[1;31m---- Autenticacion ----\033[0m\n";
         cout << "Inserte el usuario de administrador: ";
         cin >> usuario;
 
