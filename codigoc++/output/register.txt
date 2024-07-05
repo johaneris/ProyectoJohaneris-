@@ -1,0 +1,9 @@
+2; ID
+johaneris; nombre del paciente
+avalos; apellido del paciente
+costado norte de la quinta 2 cu84342603; direccion
+84342603; numero de telefono
+12; edad del paciente
+femenino; genero del paciente
+muerte; historial medico
+muerte x2; razon de la consulta
